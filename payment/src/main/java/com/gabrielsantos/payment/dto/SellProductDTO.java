@@ -22,8 +22,6 @@ public class SellProductDTO extends RepresentationModel<SellProductDTO> {
 
     private Integer quantity;
 
-    private Sell sell;
-
     public static SellProductDTO toDTO(SellProduct sellProduct) {
         return new ModelMapper().map(sellProduct, SellProductDTO.class);
     }
