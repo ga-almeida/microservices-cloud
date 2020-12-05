@@ -1,5 +1,6 @@
 package com.gabrielsantos.crud.dto;
 
+
 import com.gabrielsantos.crud.entity.Product;
 import lombok.*;
 import org.modelmapper.ModelMapper;
