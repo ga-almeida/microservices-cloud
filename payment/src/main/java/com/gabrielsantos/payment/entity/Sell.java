@@ -1,6 +1,8 @@
 package com.gabrielsantos.payment.entity;
 
+import com.gabrielsantos.payment.dto.SellDTO;
 import lombok.*;
+import org.modelmapper.ModelMapper;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -28,4 +30,8 @@ public class Sell {
 
     @Column(name = "value_total", nullable = false)
     private Double valueTotal;
+
+    public static Sell toModel(SellDTO sellDTO) {
+        return new ModelMapper().map(sellDTO, Sell.class);
+    }
 }

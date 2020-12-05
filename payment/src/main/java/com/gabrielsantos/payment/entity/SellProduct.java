@@ -1,6 +1,8 @@
 package com.gabrielsantos.payment.entity;
 
+import com.gabrielsantos.payment.dto.SellProductDTO;
 import lombok.*;
+import org.modelmapper.ModelMapper;
 
 import javax.persistence.*;
 
@@ -27,4 +29,7 @@ public class SellProduct {
     @JoinColumn(name = "id_sell")
     private Sell sell;
 
+    public static SellProduct toDTO(SellProductDTO sellProductDTO) {
+        return new ModelMapper().map(sellProductDTO, SellProduct.class);
+    }
 }
